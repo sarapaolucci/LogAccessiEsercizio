@@ -54,4 +54,8 @@ public class Gestore {
         stampaElenco(ordinamento);
     }
     
+    public void accessiConsecutiviFalliti(){
+        System.out.println("!");
+    }
+    
 }
