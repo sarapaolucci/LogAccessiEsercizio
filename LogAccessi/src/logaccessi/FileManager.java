@@ -26,6 +26,7 @@ public class FileManager {
     }
     
     public void leggiFile(ArrayList<Utente> accessi) throws FileNotFoundException, IOException, ParseException{
+        boolean b = true;
         try(BufferedReader reader = new BufferedReader(new FileReader(csvFile))){
             String line;
             reader.readLine();
@@ -33,7 +34,10 @@ public class FileManager {
                 String[] colonne = line.split(",");
                 DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                 LocalDateTime dataOra = LocalDateTime.parse(colonne[0], formatter);
-                Utente u = new Utente(colonne[1],colonne[2],Boolean.parseBoolean(colonne[3]),dataOra);
+                if(colonne[3].equals("FAIL")){
+                    b = false;
+                }
+                Utente u = new Utente(colonne[1],colonne[2],b,dataOra);
                 accessi.add(u);
             }
         }

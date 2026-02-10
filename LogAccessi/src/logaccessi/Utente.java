@@ -22,4 +22,12 @@ public class Utente {
         this.username = u;
     }
     
+    public String getNome(){
+        return this.username;
+    }
+    
+    public boolean getAccesso(){
+        return esitoAccesso;
+    }
+    
 }
