@@ -5,6 +5,7 @@
 package logaccessi;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  *
@@ -41,6 +42,16 @@ public class Gestore {
         }
     }
     
+    public void stampaElenco(ArrayList<Utente>u){
+        for(Utente ut: u){
+            System.out.println("Username: " + ut.getNome());
+        }
+    }
     
+    public void ordinaLog(){
+        ArrayList<Utente> ordinamento = utenti;
+        ordinamento.sort(Comparator.comparing(Utente::getAccesso));
+        stampaElenco(ordinamento);
+    }
     
 }
