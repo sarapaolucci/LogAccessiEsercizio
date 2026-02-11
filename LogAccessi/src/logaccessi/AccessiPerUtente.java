@@ -16,4 +16,13 @@ public class AccessiPerUtente {
         this.nome = n;
         this.numAccessifalliti = a;
     }
+    
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public int getAccessiFalliti(){
+        return this.numAccessifalliti;
+    }
+    
 }

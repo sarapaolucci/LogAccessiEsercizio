@@ -30,4 +30,8 @@ public class Utente {
         return esitoAccesso;
     }
     
+    public String getIP(){
+        return this.ip;
+    }
+    
 }
