@@ -5,6 +5,7 @@
 package logaccessi;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -32,6 +33,22 @@ public class Utente {
     
     public String getIP(){
         return this.ip;
+    }
+    
+    public LocalDateTime getData(){
+        return data;
+    }
+    
+    public String ToString(){
+        String a = "";
+        if(esitoAccesso == true){
+            a = "OK";
+        }
+        else{
+            a = "FAIL";
+        }
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return data + ", " + username + ", " + ip + ", " + a;
     }
     
 }

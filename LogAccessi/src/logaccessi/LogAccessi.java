@@ -4,6 +4,10 @@
  */
 package logaccessi;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+
 /**
  *
  * @author sarap
@@ -13,11 +17,13 @@ public class LogAccessi {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
         Gestore g = new Gestore("LogAccessi.csv");
-        g.controllo();
+        g.leggiF();
+        g.ordinaLog();
         g.contaAccessiFallitiPerUtente();
-        g.contaIPSospetti();
+        g.IPDiversiStessoTempo();
+        g.accCons();
     }
     
 }

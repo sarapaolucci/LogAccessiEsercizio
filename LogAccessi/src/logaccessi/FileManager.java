@@ -34,7 +34,7 @@ public class FileManager {
                 String[] colonne = line.split(",");
                 DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                 LocalDateTime dataOra = LocalDateTime.parse(colonne[0], formatter);
-                if(colonne[3].equals("FAIL")){
+                if(colonne[3].equals("FAIL")==true){
                     b = false;
                 }
                 Utente u = new Utente(colonne[1],colonne[2],b,dataOra);
